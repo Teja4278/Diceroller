@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <style>
+        #body{
+            width:400px;
+            height:250px;
+            border:2px solid black;
+            border-radius: 10px;
+            margin: 200px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #dice-image {
+            width: 150px; /* Adjust size as needed */
+            height: 100px; /* Adjust size as needed */
+            margin-left:120px;
+            margin-top: 20px;
+        
+        }
+    </style>
+</head>
+<body id="body">
+    <center><h1>DICE ROLLER</h1></center>
+    <center><button id="roll-dice">Roll Dice</button></center>
+
+    <img id="dice-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPZS8etd0T6G7hhuUyXwnvdyRM3Sh7bwqKJA&s" alt="Dice" /> 
+
+    <script>
+        document.getElementById('roll-dice').addEventListener('click', function() {
+            // Generate a random number between 1 and 6
+            const randomNumber = Math.floor(Math.random() * 6) + 1;
+
+            // Create the URL for the dice image
+            const diceImageUrl = `https://www.random.org/dice/dice${randomNumber}.png`;
+
+            // Set the src attribute of the image
+            document.getElementById('dice-image').src = diceImageUrl;
+        });
+    </script>
+</body>
+</html>
